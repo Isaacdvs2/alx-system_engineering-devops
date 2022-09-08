@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $PATH > path.txt | grep -o ":" path.txt | wc -l
