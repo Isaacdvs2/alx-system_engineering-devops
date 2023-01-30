@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Process and PID file
+# Y U no love me challenge
 
 file="/var/run/myscript.pid"
 
