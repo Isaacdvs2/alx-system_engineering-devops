@@ -2,7 +2,7 @@
 # To infinity and beyond
 
 while true; do
-  echo -e "To infinity and beyond\n"
+  echo "To infinity and beyond "
   sleep 2
 done
 
