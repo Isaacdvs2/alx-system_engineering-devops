@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# well well well
+# a manage_my_process Bash script 
 
 file="/tmp/my_process"
 
