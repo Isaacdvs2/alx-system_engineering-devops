@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# A script to install NginX web server listening on port 80
+#
+echo -e "Fetch the latest version of the package list..\n"
+sudo apt-get update -y -qq
+echo -e "Install the latest version of Nginx..\n"
+sudo apt-get install nginx -y
+
+echo -e 'starting nginx service and allow nginx http on firewall..\n'
+sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+
+echo -e 'Granting user ownership to website file..\n'
+sudo chown -R "$USRE":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+echo -e 'Granting permissions..Done!.\n'
+
+echo -e 'Creating backup index\n'
+cp /var/www/html/index.nginx-debian.html /var/www/html/nginx-debian.html.bckp
+
+echo -e 'Creating new index...\n'
+echo -e "Hello World!" | dd status=none of=/var/www/tml/index.nginx-debian
+
+echo -e 'Restart nginx..\n'
+sudo service nginx restart
+
+echo -e "Nginx Setup complete!\n"
